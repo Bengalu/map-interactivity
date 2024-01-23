@@ -8,6 +8,7 @@
 
 body{
   background: #000;
+  height: 100%;
 }
 
 .content{
@@ -18,29 +19,72 @@ body{
   margin-top: 100px;
 }
 
-main{
+.main{
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 1400px;
   border: 2px solid black;
   background: #000;
+  padding-bottom: 100px;
+  gap: 50px;
 
   div.stats{
-    width: 30vw;
-    height: 80vh;
+    width: 80vw;
+    height: 600px;
     background: white;
   }
 }
 
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
 
+.popup-content {
+  background: #fff; /* Color de fondo del pop-up */
+  padding: 20px;
+  border-radius: 8px;
+  width: 50vw; /* Puedes ajustar el ancho máximo según tus necesidades */
+  height: 500px; /* Puedes ajustar la altura máxima según tus necesidades */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ddd; /* Color del botón de cierre */
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
 
 .leaflet-container{
   margin-top: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   margin-left: 50px;
   margin-right: 50px;
-  width: 30vw;
-  height: 80vh;
+  width: 80vw;
+  height: 600px;
 }
+
+
+
+.divTest{
+  position: absolute;
+  color: red;
+  z-index: 110000;
+  top: 100%;
+}
+

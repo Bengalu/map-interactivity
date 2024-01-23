@@ -1,30 +1,28 @@
 
 import React, {useState} from 'react'
 import { useMapEvents, Marker, Popup } from 'react-leaflet'
-import { Icon } from 'leaflet'
+import { getUbication } from '@/libs/getUbication';
+import PopUpDecider from './PopUpDecider';
+import { statePopUp } from '@/globalStates/statePopUp';
+import { positionState } from '@/globalStates/positionState';
+
 
 function EventMap() {
 
-    const [position, setPosition] = useState(null);
+    const { position, setPosition } = positionState()
 
-    const scoutingIcon = new Icon({
-        iconUrl:'detective.svg',
-        iconSize: [40, 40]
-    })
+    const { setOpen } = statePopUp();
     
     const EventMap = useMapEvents({
         dblclick(e){
-            console.log(e);
-            setPosition(e.latlng);
-            console.log(position);
+            setPosition(e.latlng.lat, e.latlng.lng);
+            setOpen()
             return 
         }
     })
    
     return position === null ? null : (
-        <Marker  position={[position.lat, position.lng]} icon={scoutingIcon}>
-          <Popup>CACHA SO CRA LOCO</Popup>
-        </Marker>
+        null
       )
 }
 

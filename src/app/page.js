@@ -1,15 +1,15 @@
-import Image from 'next/image'
+
 import MapView from '@/components/MapView'
+import PopUpDecider from '@/components/PopUpDecider'
+import SectionMap from '@/components/SectionMap'
 
 export default function Home() {
   return (
-    <><div className='content'>
-      <h1 >PRUEBA DE MAPA</h1>
-    </div><main>
-        <MapView />
-        <div className='stats'>
-
-        </div>
-      </main></>
+    <>
+    
+    <main>
+    
+    </main>
+    </>
   )
 }
